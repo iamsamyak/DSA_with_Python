@@ -47,9 +47,32 @@ o1.info()
 
 """
 
-class boom:
-    def display():
-        print("hey")
+#if the value of the object varies from object to object is
+#called instance variable
 
-b1 = boom()
-b1.display()
+class Student:
+    c = 10
+    def __init__(self,name,rollno):
+        "__docstring__ constructor"
+        self.name = name
+        self.rollno = rollno
+
+    def info(self):
+        self.marks = 70
+        x=10
+
+s1 = Student('samyak',101)
+#before calling the info we have only2 instance variable are there
+
+print(s1.__dict__)
+s1.info()
+
+#after info method 1 is added. 
+print(s1.__dict__)
+#using the __dict__ we can get all the instance variables details
+#using __dict only instance variable are shown
+#x=10, c=10 is not shown
+s1.tell = 10 
+print(s1.__dict__)
+
+
